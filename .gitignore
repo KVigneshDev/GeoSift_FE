@@ -1,0 +1,14 @@
+node_modules
+dist
+*.local
+
+# Editor directories and files
+.vscode/*
+
+# Environment variables
+.env
+.env.local
+.env.production
+
+# Generated files
+src/apollo/generated
