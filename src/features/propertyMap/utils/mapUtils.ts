@@ -2,7 +2,7 @@ import type {
   BoundingBoxInput,
   ActiveFilterInput,
   ActiveFilters,
-  PropertyLayoutGql,
+  // PropertyLayoutGql,
   PropertyFeaturesGql,
   KeyValueGql,
 } from "@/features/propertyMap/types";
@@ -124,9 +124,9 @@ export function buildLoadingContent(): string {
 
 // ─── OSM attribute categorisation (used only in info window) ──────────────────
 
-const OSM_CATEGORY_MAP: Record<string, string> = {
-  // key prefix → categoryId
-};
+// const OSM_CATEGORY_MAP: Record<string, string> = {
+//   // key prefix → categoryId
+// };
 
 function categorizeSingleAttr(attr: KeyValueGql): string {
   const { key } = attr;

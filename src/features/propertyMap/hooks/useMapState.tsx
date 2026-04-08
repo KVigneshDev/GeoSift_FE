@@ -1,7 +1,7 @@
 import { useState, useCallback, createContext, useContext } from "react";
 import type {
   BoundingBoxInput,
-  PropertyLayoutGql,
+  // PropertyLayoutGql,
 } from "@/features/propertyMap/types";
 
 // 1. Define the full shape of the Context Value
