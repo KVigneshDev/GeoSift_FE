@@ -33,6 +33,22 @@ export default function LandingPage() {
     }
   }, [isAuthenticated, navigate, location]);
 
+  useEffect(() => {
+    const wakeServer = async () => {
+      try {
+        const result = await fetch('https://geosift-be-1.onrender.com/health')
+        if (!result.ok) {
+          setTimeout(wakeServer, 5000); // retry on bad status too
+        }
+      } catch (e) {
+        // Server was sleeping, this request itself woke it up
+        // Retry after a delay
+        setTimeout(wakeServer, 5000)
+      }
+    }
+    wakeServer()
+  }, [])
+
   const validate = (): boolean => {
     const e: FormErrors = {};
     if (!isLoginView) {
@@ -62,8 +78,6 @@ export default function LandingPage() {
       setIsSubmitting(false);
     }
   };
-
-  console.log(userData, "userData")
 
   const handleRegister = async (ev: FormEvent) => {
     ev.preventDefault();

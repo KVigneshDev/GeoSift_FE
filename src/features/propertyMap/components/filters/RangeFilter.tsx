@@ -12,7 +12,6 @@ export const RangeFilter: React.FC<RangeFilterProps> = ({
   selected,
   onSet,
 }) => {
-  console.log(group, 'group');
   const minAbs = Number(group.values[0]?.count ?? 0);
   const maxAbs = Number(group.values[1]?.count ?? 100);
 
